@@ -2,9 +2,9 @@ from flask.blueprints import Blueprint
 from flask.typing import ResponseReturnValue
 from flask_inertia import render_inertia
 
-testBP = Blueprint('teste', __name__)
+testBP = Blueprint('teste', __name__, url_prefix='/api')
 
-@testBP.route('/teste')
+@testBP.route('/')
 def index() -> ResponseReturnValue:
 
     data = {
@@ -13,7 +13,7 @@ def index() -> ResponseReturnValue:
     }
 
     return render_inertia(
-        component_name='Index',
+        component_name='App',
         props=data,
         view_data={
             'description': 'TestPage'
