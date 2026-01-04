@@ -3,14 +3,14 @@ import react from '@vitejs/plugin-react'
 import { fileURLToPath } from 'url'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     }
   },
-  base: '/dist',
+  base: command === 'serve' ? '/' : '/dist',
   build: {
     outDir: '../dist',
     emptyOutDir: true,
@@ -24,4 +24,4 @@ export default defineConfig({
     },
   }
 
-})
+}))

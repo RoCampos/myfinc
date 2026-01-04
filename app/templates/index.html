@@ -18,7 +18,20 @@
     <div id="app" data-page='{{ page | tojson}}'></div>
 
 
-    <script type="module" src="{{ url_for('static', filename='dist/assets/main.js') }}"></script>
+    {% if config['DEBUG'] %}
+            <script type="module">
+                import RefreshRuntime from 'http://localhost:5173/@react-refresh'
+                RefreshRuntime.injectIntoGlobalHook(window)
+                window.$RefreshReg$ = () => {}
+                window.$RefreshSig$ = () => (type) => type
+                window.__vite_plugin_react_preamble_installed__ = true
+            </script>
+            <!-- 2. O Cliente do Vite -->
+            <script type="module" src="http://localhost:5173/@vite/client"></script>            
+            <script type="module" src="http://localhost:5173/src/main.tsx"></script>
+    {% else %}
+        <script type="module" src="{{ url_for('static', filename='dist/assets/main.js') }}"></script>
+    {% endif %}
 </body>
 
 </html>

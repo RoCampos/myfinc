@@ -7,6 +7,8 @@ function App(props: any) {
     <>
       <div>
         Oi {props.user}
+
+        tudo bem
       </div>
     </>
   )
