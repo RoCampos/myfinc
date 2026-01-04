@@ -14,10 +14,11 @@
 </head>
 
 <body>
-    <div id="app" data-page="{{ page | tojson}}"></div>
+    <!-- aspas simples -->
+    <div id="app" data-page='{{ page | tojson}}'></div>
 
 
-    <script src="{{ url_for('static', filename='dist/assets/main.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='dist/assets/main.js') }}"></script>
 </body>
 
 </html>
