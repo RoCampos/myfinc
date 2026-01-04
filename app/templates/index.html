@@ -7,8 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-    <script lang="javascript">
-        { { inertia.include_router() } }
+    <script>
+        {{ inertia.include_router() }}
     </script>
 
 </head>
@@ -17,7 +17,7 @@
     <div id="app" data-page="{{ page | tojson}}"></div>
 
 
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='dist/assets/main.js') }}"></script>
 </body>
 
 </html>
