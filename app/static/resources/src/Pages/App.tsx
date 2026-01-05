@@ -1,5 +1,6 @@
 
 import './App.css'
+import { Link } from '@inertiajs/react'
 
 function App(props: any) {
 
@@ -8,7 +9,9 @@ function App(props: any) {
       <div>
         Oi {props.user}
 
-        tudo bem
+
+        <Link href="/login">Login</Link>
+
       </div>
     </>
   )
