@@ -5,7 +5,7 @@ interface ButtonProps {
 
 function Button({ className, children }: ButtonProps) {
     return (
-        <button className={`p-4 w-full rounded-xl ${className}`}>
+        <button className={`py-2 px-4 w-full rounded-xl text-sm ${className}`}>
             {children}
         </button>
     )

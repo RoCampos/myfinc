@@ -60,8 +60,8 @@ function Form({ className, action }: FormProps) {
     return (
         <form onSubmit={onSubmit} className={`flex flex-col flex-1 gap-4 w-full h-full space-y-auto ${className}`}>
             <Fieldset className="flex gap-2">
-                <Field className="flex-1">
-                    <Label>Email</Label>
+                <Field className="flex-1 flex flex-col gap-2 text-finance-ink">
+                    <Label className="font-semibold">Email</Label>
                     <Input type="email" placeholder="seuemail@seusite.com" value={data.email} onChange={(e) => setData('email', e.target.value)} onFocus={clearError} />
                     {visibleError && <InputError message={visibleError} />}
                 </Field>
@@ -69,16 +69,16 @@ function Form({ className, action }: FormProps) {
 
             {action === '/register' && (
                 <Fieldset className="flex gap-2">
-                    <Field className="flex-1">
-                        <Label>Nome</Label>
+                    <Field className="flex-1 flex flex-col gap-2 text-finance-ink">
+                        <Label className="font-semibold">Nome</Label>
                         <Input type="text" placeholder="Seu nome" value={data.name} onChange={(e) => setData('name', e.target.value)} onFocus={clearError} />
                     </Field>
                 </Fieldset>
             )}
 
             <Fieldset className="flex gap-2">
-                <Field className="flex-1">
-                    <Label>Senha</Label>
+                <Field className="flex-1 flex flex-col gap-2 text-finance-ink">
+                    <Label className="font-semibold">Senha</Label>
                     <Input type="password" placeholder="Sua senha" value={data.password} onChange={(e) => setData('password', e.target.value)} />
                 </Field>
             </Fieldset>

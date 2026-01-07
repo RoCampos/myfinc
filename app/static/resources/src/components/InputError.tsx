@@ -1,10 +1,9 @@
 
 interface InputErrorProps {
-    category?: string;
     message?: string;
 }
 
-function InputError({ category, message }: InputErrorProps) {
+function InputError({ message }: InputErrorProps) {
     return (
         <p className="text-red-500">{message}</p>
     )
