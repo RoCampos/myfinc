@@ -22,26 +22,26 @@ def login() -> ResponseReturnValue:
             user = session.query(User).filter_by(email=email).first()
 
             if not user:
-                flash('User not found')
+                flash('User not found', 'error')
                 return redirect(url_for('auth.login'), 302)
             
             if not check_password_hash(user.password, password):
-                flash('Invalid password')
+                flash('Invalid password', 'error')
                 return redirect(url_for('auth.login'), 302)
             
             login_user(user)
             return redirect(url_for('auth.dashboard'))    
 
     return render_inertia(
-        component_name='Auth/Login')
+        component_name='Auth/Auth')
 
 
 @auth.route('/register', methods=['GET', 'POST']) 
 def register() -> ResponseReturnValue:
     if request.method == 'POST':
 
-        name = request.json['name']
         email = request.json['email']
+        name = request.json['name']
         password = request.json['password']
 
         with get_connection() as session:
@@ -56,12 +56,13 @@ def register() -> ResponseReturnValue:
                 session.add(user)
                 session.commit()
             else:
-                return 'User already exists', 400
+                flash('Usuário já existe', 'error')
+                return redirect(url_for('auth.login'), 302)                
         
         return redirect(url_for('auth.dashboard'))
 
     return render_inertia(
-        component_name='Auth/Register')
+        component_name='Auth/Auth')
 
 
 @auth.route('/dashboard')

@@ -13,7 +13,7 @@ def index() -> ResponseReturnValue:
     }
 
     return render_inertia(
-        component_name='App',
+        component_name='Auth/Auth',
         props=data,
         view_data={
             'description': 'TestPage'

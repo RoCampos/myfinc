@@ -1,1 +1,35 @@
 @import 'tailwindcss';
+
+@theme {
+    /* Cores - Finance Theme */
+    --color-finance-bg: #F7F9FC;
+    --color-finance-surface: #FFFFFF;
+    --color-finance-ink: #0B1220;
+    --color-finance-slate: #111A2E;
+    --color-finance-muted: #667085;
+    --color-finance-border: #E6EAF2;
+    --color-finance-border2: #D7DDEA;
+
+    /* Cores - Brand / Accent */
+    --color-finance-accent: #2563EB;
+
+    /* Cores - Feedback */
+    --color-finance-success: #16A34A;
+    --color-finance-warning: #F59E0B;
+    --color-finance-danger: #DC2626;
+
+    /* Sombras */
+    --shadow-finance-soft: 0 10px 24px rgba(11, 18, 32, 0.10);
+
+    /* Background Images (Gradientes) */
+    --background-image-finance-nav: linear-gradient(135deg, #0B1220 0%, #111A2E 100%);
+    --background-image-finance-accent-glow: linear-gradient(90deg, rgba(37, 99, 235, 0) 0%, rgba(37, 99, 235, 0.35) 50%, rgba(37, 99, 235, 0) 100%);
+
+    /* Border Radius */
+    --radius-finance-lg: 18px;
+    --radius-finance-xl: 22px;
+
+
+    --color-finance-primary: var(--color-finance-accent);
+
+}
