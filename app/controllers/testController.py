@@ -9,11 +9,11 @@ def index() -> ResponseReturnValue:
 
     data = {
         'user': 'Romerito',
-        'login': 'bar',
+        'login': 'boom',
     }
 
     return render_inertia(
-        component_name='Auth/Auth',
+        component_name='Test',
         props=data,
         view_data={
             'description': 'TestPage'
