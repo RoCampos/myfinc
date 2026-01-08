@@ -10,7 +10,7 @@ interface TabProps {
 function Tab({ title, children }: TabProps) {
     return (
         <TabHeadless className={
-            "bg-finance-surface text-finance-ink font-semibold rounded-xl text-center text-sm w-28 py-2 outline-none data-selected:bg-finance-ink data-selected:text-finance-surface data-selected:hover:bg-finance-slate/80"
+            "bg-finance-bg text-finance-ink font-semibold rounded-xl text-center text-sm w-28 py-2 outline-none data-selected:bg-finance-ink data-selected:text-finance-surface data-selected:hover:bg-finance-slate/80"
         }>
             {title}
             {children}
