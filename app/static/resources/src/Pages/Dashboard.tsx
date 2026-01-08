@@ -1,11 +1,14 @@
-import { Link } from '@inertiajs/react'
+
+import AppLayout from '@/Layouts/AppLayout'
+import BottomNav from '@/components/BottomNav'
 
 function Dashboard() {
     return (
-        <div>
-            <h1>Dashboard</h1>
-            <Link href="/logout" method="post" as="button">Logout</Link>
-        </div>
+        <AppLayout>
+            <div className='flex flex-col flex-1 bg-finance-surface p-2 rounded border border-finance-border'>
+                <BottomNav />
+            </div>
+        </AppLayout>
     )
 }
 

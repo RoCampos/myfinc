@@ -1,8 +1,8 @@
-import AppLayout from "@/Layouts/AppLayout";
+
 
 function Test() {
     return (
-        <AppLayout />
+        <div></div>
     )
 }
 
