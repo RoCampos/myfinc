@@ -1,7 +1,6 @@
 
 import { Tab as TabHeadless, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react"
 import AuthForm from "@/components/auth/AuthForm"
-import { useState } from "react"
 
 
 interface TabProps {
@@ -21,33 +20,19 @@ function Tab({ title, children }: TabProps) {
 
 function AuthTab() {
 
-    const [title, setTitle] = useState("Entrar")
-    const [subtitle, setSubtitle] = useState("Use seu email para acessar sua conta")
-    const [selectedIndex, setSelectedIndex] = useState(0)
-
-    function handleTabChange(index: number) {
-        setSelectedIndex(index)
-        setTitle(selectedIndex === 1 ? "Entrar" : "Cadastro")
-        setSubtitle(selectedIndex === 1 ? "Use seu email para acessar sua conta" : "Crie sua conta com seu email")
-    }
-
     return (
-        <div className="flex flex-col h-full gap-4">
-            <div>
-                <h2>{title}</h2>
-                <p>{subtitle}</p>
-            </div>
+        <div className="flex flex-col gap-4 justify-center flex-1">
 
-            <TabGroup onChange={(index) => handleTabChange(index)} className="flex flex-col h-full gap-4">
+            <TabGroup className="flex flex-col gap-4">
                 <TabList className="flex self-center border border-finance-border rounded-xl w-auto justify-center items-center">
                     <Tab title="Entrar" />
                     <Tab title="Cadastro" />
                 </TabList>
-                <TabPanels className="h-full flex flex-col flex-1">
+                <TabPanels className="flex flex-col flex-1">
                     <TabPanel className="flex-1 flex flex-col">
                         <AuthForm action="/login" />
                     </TabPanel>
-                    <TabPanel>
+                    <TabPanel className="flex-1 flex flex-col">
                         <AuthForm action="/register" />
                     </TabPanel>
                 </TabPanels>

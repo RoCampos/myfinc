@@ -7,7 +7,7 @@ interface CardProps {
 function Card({ className, children }: CardProps) {
 
     return (
-        <div className={`flex flex-col w-full border border-finance-border rounded-lg p-6 h-1/4 ${className}`}>
+        <div className={`flex flex-1 flex-col border border-finance-border rounded-lg p-6 ${className}`}>
             {children}
         </div>
     )

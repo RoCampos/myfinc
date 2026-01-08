@@ -58,7 +58,7 @@ function Form({ className, action }: FormProps) {
     }
 
     return (
-        <form onSubmit={onSubmit} className={`flex flex-col flex-1 gap-4 w-full h-full space-y-auto ${className}`}>
+        <form onSubmit={onSubmit} className={`flex flex-col flex-1 gap-4 w-full space-y-auto ${className}`}>
             <Fieldset className="flex gap-2">
                 <Field className="flex-1 flex flex-col gap-2 text-finance-ink">
                     <Label className="font-semibold">Email</Label>
